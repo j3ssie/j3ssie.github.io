@@ -1,233 +1,752 @@
-<!DOCTYPE html><html lang="en" data-theme="dark"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="A passionate security engineer and creator of Osmedeus, Metabigor, and Jaeles."><!-- Open Graph --><meta property="og:title" content="Jessie Ho aka j3ssie"><meta property="og:description" content="A passionate security engineer and creator of Osmedeus, Metabigor, and Jaeles."><meta property="og:type" content="website"><meta property="og:url" content="https://j3ssie.github.io"><meta property="og:image" content="https://avatars3.githubusercontent.com/u/23289085?s=460&u=d61e560a054ac1c7df8ad51fcbaa7d8dfd131fcc&v=4"><!-- Twitter --><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@j3ssiejjj"><meta name="twitter:creator" content="@j3ssiejjj"><meta name="twitter:title" content="Jessie Ho aka j3ssie"><meta name="twitter:description" content="A passionate security engineer and creator of Osmedeus, Metabigor, and Jaeles."><title>Jessie Ho aka j3ssie</title><!-- Favicon --><link rel="icon" href="/favicon.ico"><!-- Google Fonts: Roboto Mono --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Lucide Icons CDN --><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script><!-- Global Styles --><!-- Theme initialization (before body to prevent flash) --><script>
-      (function() {
-        const stored = localStorage.getItem('theme');
-        const theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-        document.documentElement.setAttribute('data-theme', theme);
-      })();
-    </script><style>.terminal-overlay[data-astro-cid-arvmh47h]{position:fixed;top:0;left:0;width:100vw;height:100vh;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:1;transition:opacity .5s ease-out}.terminal-overlay[data-astro-cid-arvmh47h].fade-out{opacity:0;pointer-events:none}.terminal-overlay[data-astro-cid-arvmh47h].hidden{display:none}.terminal-content[data-astro-cid-arvmh47h]{font-family:var(--font);font-size:clamp(1.125rem,3vw,1.5rem);color:var(--text);padding:2rem;max-width:700px;width:100%}.terminal-line[data-astro-cid-arvmh47h]{opacity:0;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}.terminal-line[data-astro-cid-arvmh47h].visible{opacity:1}.prompt[data-astro-cid-arvmh47h]{color:var(--purple)}.text[data-astro-cid-arvmh47h]{color:var(--text)}.text-success[data-astro-cid-arvmh47h]{color:var(--accent)}.text-cyan[data-astro-cid-arvmh47h]{color:var(--cyan)}.text-muted[data-astro-cid-arvmh47h]{color:var(--muted)}.bruteforce[data-astro-cid-arvmh47h]{color:var(--purple);font-family:var(--font);letter-spacing:-1px}.dots[data-astro-cid-arvmh47h]{color:var(--cyan);animation:blink-dots .5s infinite}@keyframes blink-dots{0%,50%{opacity:1}51%,to{opacity:.3}}.cursor[data-astro-cid-arvmh47h]{color:var(--accent);animation:blink-cursor .8s infinite}.terminal-line[data-astro-cid-arvmh47h].visible .cursor[data-astro-cid-arvmh47h]{display:inline}.terminal-line[data-astro-cid-arvmh47h]:not(.visible) .cursor[data-astro-cid-arvmh47h]{display:none}.progress-container[data-astro-cid-arvmh47h]{color:var(--muted);font-family:var(--font)}.progress-bar[data-astro-cid-arvmh47h]{display:inline-block;width:0;background:var(--accent);height:1em;vertical-align:middle;transition:width .05s linear}.progress-text[data-astro-cid-arvmh47h]{color:var(--cyan);min-width:3ch}.welcome-text[data-astro-cid-arvmh47h]{opacity:0;margin:1.5rem 0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700}.welcome-text[data-astro-cid-arvmh47h].visible{opacity:1;transform:translateY(0)}.text-accent[data-astro-cid-arvmh47h]{color:var(--accent)}.skip-hint[data-astro-cid-arvmh47h]{margin-top:1.5rem}.skip-hint[data-astro-cid-arvmh47h].visible{animation:pulse 2s infinite}@keyframes blink-cursor{0%,50%{opacity:1}51%,to{opacity:0}}@keyframes pulse{0%,to{opacity:.6}50%{opacity:1}}@media(max-width:480px){.terminal-content[data-astro-cid-arvmh47h]{padding:1rem}.welcome-text[data-astro-cid-arvmh47h]{font-size:1.25rem}.progress-bar[data-astro-cid-arvmh47h]{max-width:80px}}:root{--bg: #181920;--surface: #282a36;--text: #f2f2f2;--muted: #a1a1a1;--accent: #50fa7b;--accent-hover: #69ff94;--purple: #bd93f9;--cyan: #54f9fb;--red: #ff615a;--blue: #5dade2;--orange: #ff79c6;--yellow: #ffb86c;--header-bg: #181920d9;--border: #44475a;--radius: 6px;--max-width: 1000px;--font: "SF Mono", "Roboto Mono", "Monaco", monospace}[data-theme=light]{--bg: #f8f8f2;--surface: #fff;--text: #282a36;--muted: #6272a4;--accent: #1a9f4a;--accent-hover: #158a3e;--purple: #bd93f9;--cyan: #0d9488;--red: #ff5555;--blue: #3b82f6;--yellow: #b45309;--header-bg: #f8f8f2e6;--border: #e2e8f0}*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}button{font-family:inherit;cursor:pointer;border:none;background:none}.container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 1.5rem}section{padding:2.5rem 0;border-bottom:1px solid var(--border)}section:last-of-type{border-bottom:none}.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}.hover-lift{transition:transform .2s ease,box-shadow .2s ease}.hover-lift:hover{transform:translateY(-4px);box-shadow:0 8px 30px #0000004d}[data-theme=light] .hover-lift:hover{box-shadow:0 8px 30px #0000001a}.glow-button{background:var(--accent);color:var(--bg);padding:.875rem 1.75rem;border-radius:var(--radius);font-weight:600;transition:all .2s ease;display:inline-block}.glow-button:hover{background:var(--accent-hover)}.underline-link{position:relative;display:inline-block}.underline-link:after{content:"";position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--accent);transition:width .2s ease}.underline-link:hover:after{width:100%}h1,h2,h3,h4,h5,h6{font-weight:700;line-height:1.2}h1{font-size:clamp(2.5rem,5vw,4rem);letter-spacing:-.02em}h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.01em;color:var(--accent)}h3{font-size:1.125rem}.arrow{color:var(--purple);margin-right:.5rem}.text-cyan{color:var(--cyan)}.text-red{color:var(--red)}.text-blue{color:var(--blue)}.text-accent{color:var(--accent)}.skill-tag{display:inline-block;padding:.375rem .75rem;background:var(--surface);border:1px solid var(--border);border-radius:9999px;font-size:.875rem;color:var(--muted);transition:all .2s ease}.skill-tag:hover{color:var(--cyan);border-color:var(--cyan)}.main-content{opacity:1;transition:opacity .3s ease}.main-content.hidden{opacity:0}@media(max-width:768px){section{padding:2rem 0}}@media(max-width:480px){h2{font-size:1.25rem}}.theme-toggle[data-astro-cid-x3pjskd3]{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius);color:var(--text);transition:background .2s ease}.theme-toggle[data-astro-cid-x3pjskd3]:hover{background:var(--surface)}.theme-toggle[data-astro-cid-x3pjskd3] svg[data-astro-cid-x3pjskd3]{width:20px;height:20px}.sun-icon[data-astro-cid-x3pjskd3]{display:none}.moon-icon[data-astro-cid-x3pjskd3],[data-theme=light] .sun-icon[data-astro-cid-x3pjskd3]{display:block}[data-theme=light] .moon-icon[data-astro-cid-x3pjskd3]{display:none}header[data-astro-cid-3ef6ksr2]{position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:var(--header-bg);border-bottom:1px solid var(--border)}nav[data-astro-cid-3ef6ksr2]{display:flex;align-items:center;justify-content:space-between;height:56px}.logo[data-astro-cid-3ef6ksr2]{display:flex;align-items:center}.logo-img[data-astro-cid-3ef6ksr2]{height:24px;width:auto;transition:filter .2s ease}.logo-img[data-astro-cid-3ef6ksr2]:hover{filter:drop-shadow(0 0 6px var(--accent))}.nav-links[data-astro-cid-3ef6ksr2]{display:flex;gap:2rem;list-style:none}.nav-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{font-size:.9rem;font-weight:700;color:var(--muted);transition:color .2s ease}.nav-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]:hover{color:var(--text);text-shadow:0 0 10px currentColor,0 0 20px currentColor}@media(max-width:640px){.nav-links[data-astro-cid-3ef6ksr2]{gap:1rem}.nav-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{font-size:.85rem}}.hero-section[data-astro-cid-v2cbyr3p]{padding-top:2.5rem;padding-bottom:2rem}.about-content[data-astro-cid-v2cbyr3p]{max-width:100%}@media(min-width:1024px){.hero-section[data-astro-cid-v2cbyr3p]{padding:0}}.about-header[data-astro-cid-v2cbyr3p]{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}.avatar[data-astro-cid-v2cbyr3p]{width:80px;height:80px;border-radius:12px;border:2px solid var(--accent);transition:all .2s ease}.avatar[data-astro-cid-v2cbyr3p]:hover{box-shadow:0 0 8px var(--accent)}.about-intro[data-astro-cid-v2cbyr3p] h2[data-astro-cid-v2cbyr3p]{margin:0}.section-link[data-astro-cid-v2cbyr3p]{color:var(--accent);font-weight:900;font-size:2rem;text-decoration:none;transition:opacity .2s ease}.section-link[data-astro-cid-v2cbyr3p]:hover{text-shadow:0 0 8px currentColor}.bio[data-astro-cid-v2cbyr3p]{margin-bottom:1.5rem}.bio[data-astro-cid-v2cbyr3p] p[data-astro-cid-v2cbyr3p]{font-size:1.1rem;font-weight:500;margin-bottom:1rem;color:var(--text);line-height:1.8}.bio[data-astro-cid-v2cbyr3p] p[data-astro-cid-v2cbyr3p]:last-child{margin-bottom:0}.bio[data-astro-cid-v2cbyr3p] a[data-astro-cid-v2cbyr3p]{text-decoration:none;transition:opacity .2s ease}.bio[data-astro-cid-v2cbyr3p] a[data-astro-cid-v2cbyr3p]:hover{opacity:.8}.text-orange[data-astro-cid-v2cbyr3p]{color:var(--orange)}@media(max-width:640px){.avatar[data-astro-cid-v2cbyr3p]{width:60px;height:60px;animation:glow-avatar 3s ease-in-out infinite}.section-link[data-astro-cid-v2cbyr3p]{font-size:1.25rem;animation:glow-text 3s ease-in-out infinite}}@keyframes glow-avatar{0%,to{box-shadow:none}50%{box-shadow:0 0 12px var(--accent)}}@keyframes glow-text{0%,to{text-shadow:none}50%{text-shadow:0 0 8px currentColor}}.project-card[data-astro-cid-mspuyifq]{display:block;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;text-decoration:none}.card-content[data-astro-cid-mspuyifq]{display:flex;flex-direction:column;gap:.5rem}.card-header[data-astro-cid-mspuyifq]{display:flex;align-items:center;gap:.5rem}.project-title[data-astro-cid-mspuyifq]{color:var(--red);font-weight:600;font-size:1rem}.stars[data-astro-cid-mspuyifq]{display:inline-flex;align-items:center;gap:.25rem;color:var(--cyan);font-size:.875rem;margin-left:.25rem}.star-icon[data-astro-cid-mspuyifq]{width:14px;height:14px}.link-icon[data-astro-cid-mspuyifq]{width:16px;height:16px;color:var(--muted);margin-left:auto;transition:color .2s ease}.project-card[data-astro-cid-mspuyifq]:hover .link-icon[data-astro-cid-mspuyifq]{color:var(--accent)}.card-description[data-astro-cid-mspuyifq]{color:var(--text);font-size:1rem;font-weight:500;line-height:1.7;padding-left:1.25rem}.tech-stack[data-astro-cid-mspuyifq]{display:flex;flex-wrap:wrap;gap:.5rem;padding-left:1.25rem}.tech-pill[data-astro-cid-mspuyifq]{font-size:.75rem;padding:.2rem .5rem;background:var(--surface);border:1px solid var(--border);border-radius:4px;color:var(--muted)}#projects[data-astro-cid-amng4zvp]{background:var(--surface)}.section-header[data-astro-cid-amng4zvp]{margin-bottom:1.5rem}.section-link[data-astro-cid-amng4zvp]{color:var(--accent);font-weight:900;font-size:2rem;text-decoration:none;transition:opacity .2s ease}.section-link[data-astro-cid-amng4zvp]:hover{text-shadow:0 0 8px currentColor}.projects-list[data-astro-cid-amng4zvp]{display:flex;flex-direction:column;gap:.75rem}.projects-row[data-astro-cid-amng4zvp]{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}@media(max-width:640px){.projects-row[data-astro-cid-amng4zvp]{grid-template-columns:1fr}}.project-card-compact[data-astro-cid-mspuyifq]{height:100%;padding:.75rem 1rem}.project-card-compact[data-astro-cid-mspuyifq] .card-content[data-astro-cid-mspuyifq]{gap:.25rem}.project-card-compact[data-astro-cid-mspuyifq] .card-description[data-astro-cid-mspuyifq]{font-size:.875rem;line-height:1.5}#contact[data-astro-cid-xmivup5a]{background:var(--bg)}.contact-content[data-astro-cid-xmivup5a]{max-width:700px}.contact-section[data-astro-cid-xmivup5a]{margin-bottom:2rem}.contact-section[data-astro-cid-xmivup5a] h2[data-astro-cid-xmivup5a]{margin-bottom:1rem}.section-link[data-astro-cid-xmivup5a]{color:var(--accent);font-weight:900;font-size:2rem;text-decoration:none;transition:opacity .2s ease}.section-link[data-astro-cid-xmivup5a]:hover{text-shadow:0 0 8px currentColor}.support-text[data-astro-cid-xmivup5a],.collab-text[data-astro-cid-xmivup5a]{color:var(--text);margin-bottom:1rem;line-height:1.8;font-size:1.2rem;font-weight:600}.links-row[data-astro-cid-xmivup5a]{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:.75rem}.social-link[data-astro-cid-xmivup5a]{display:inline-flex;align-items:center;gap:.5rem;font-size:1.1rem;font-weight:600;transition:all .2s ease}.social-link[data-astro-cid-xmivup5a]:hover{text-shadow:0 0 10px currentColor,0 0 20px currentColor}.social-link[data-astro-cid-xmivup5a] svg[data-astro-cid-xmivup5a]{width:18px;height:18px}.text-blue[data-astro-cid-xmivup5a]{color:var(--blue)}.text-red[data-astro-cid-xmivup5a]{color:var(--red)}.caret[data-astro-cid-xmivup5a]{height:17px;width:6px;display:inline-block;border:1px solid var(--muted);position:relative;animation:blink .8s linear infinite alternate;margin-top:1rem}@keyframes blink{0%,49%{opacity:1}50%,to{opacity:0}}@media(max-width:640px){.links-row[data-astro-cid-xmivup5a]{flex-direction:column;gap:.75rem}}footer[data-astro-cid-sz7xmlte]{padding:1.5rem 0;border-top:1px solid var(--border)}.footer-content[data-astro-cid-sz7xmlte]{text-align:center}.copyright[data-astro-cid-sz7xmlte]{color:var(--muted);font-size:.875rem}.footer-link[data-astro-cid-sz7xmlte]{color:#ffb86c;font-size:.875rem;cursor:pointer;transition:opacity .2s ease;background:none;border:none;font-family:inherit;padding:0}.footer-link[data-astro-cid-sz7xmlte]:hover{opacity:.8}.two-column-section{display:block}@media(min-width:1024px){.two-column-section{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1400px;margin:0 auto;padding:2rem 1.5rem}.two-column-section section{padding:0}.two-column-section #projects{background:transparent}}
-.proj-tree{color:var(--muted);opacity:.7}.proj-list{display:flex;flex-direction:column;gap:.75rem}.proj-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}.proj{display:block;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem 1rem;transition:border-color .15s ease,background .15s ease}.proj:hover{border-color:var(--cyan)}.proj-head{display:flex;align-items:center;gap:.5rem}.proj-name{color:var(--cyan);font-weight:700}.proj-stars{color:var(--yellow);font-size:.875rem}.proj-go{margin-left:auto;color:var(--muted);transition:color .15s ease,transform .15s ease}.proj:hover .proj-go{color:var(--cyan);transform:translate(2px,-2px)}.proj-desc{color:var(--muted);font-size:.9rem;margin:.25rem 0 .5rem;padding-left:18px}.proj-row .proj-desc{margin-bottom:0}.proj-badges{display:flex;flex-wrap:wrap;gap:6px;padding-left:18px}.proj-badge{padding:2px 8px;border-radius:4px;font-size:.75rem;background:var(--surface);border:1px solid var(--border);color:var(--cyan);white-space:nowrap}@media(max-width:640px){.proj-row{grid-template-columns:1fr}}
-</style></head> <body> <div id="terminal-overlay" class="terminal-overlay" data-astro-cid-arvmh47h> <div class="terminal-content" data-astro-cid-arvmh47h> <div class="welcome-text" data-delay="0" data-astro-cid-arvmh47h> <span class="text-accent" data-astro-cid-arvmh47h>Welcome to j3ssie's portfolio page</span> </div> <div class="terminal-line" data-delay="1" data-astro-cid-arvmh47h> <span class="prompt" data-astro-cid-arvmh47h>❯</span> <span class="text" data-astro-cid-arvmh47h>Initializing system...</span> </div> <div class="terminal-line" data-delay="2" data-astro-cid-arvmh47h> <span class="prompt" data-astro-cid-arvmh47h>❯</span> <span class="text" data-astro-cid-arvmh47h>Loading kernel modules...</span> </div> <div class="terminal-line" data-delay="3" data-astro-cid-arvmh47h> <span class="prompt" data-astro-cid-arvmh47h>❯</span> <span class="text text-cyan" data-astro-cid-arvmh47h>Connecting to mainframe</span> <span class="dots" data-astro-cid-arvmh47h>...</span> </div> <div class="terminal-line" data-delay="4" data-astro-cid-arvmh47h> <span class="prompt" data-astro-cid-arvmh47h>❯</span> <span class="text-muted" data-astro-cid-arvmh47h>Decrypting credentials</span> <span class="bruteforce" id="brute1" data-astro-cid-arvmh47h>████████</span> </div> <div class="terminal-line" data-delay="5" data-astro-cid-arvmh47h> <span class="prompt" data-astro-cid-arvmh47h>❯</span> <span class="text-muted" data-astro-cid-arvmh47h>Bypassing firewall</span> <span class="bruteforce" id="brute2" data-astro-cid-arvmh47h>████████</span> </div> <div class="terminal-line" data-delay="6" data-astro-cid-arvmh47h> <span class="prompt" data-astro-cid-arvmh47h>❯</span> <span class="text" data-astro-cid-arvmh47h>Injecting payload...</span> <span class="text-success" data-astro-cid-arvmh47h>[OK]</span> </div> <div class="terminal-line" data-delay="7" data-astro-cid-arvmh47h> <span class="prompt" data-astro-cid-arvmh47h>❯</span> <span class="text" data-astro-cid-arvmh47h>Establishing secure tunnel...</span> <span class="text-success" data-astro-cid-arvmh47h>[OK]</span> </div> <div class="terminal-line progress-line" data-delay="8" data-astro-cid-arvmh47h> <span class="prompt" data-astro-cid-arvmh47h>❯</span> <span class="text" data-astro-cid-arvmh47h>Loading portfolio</span> <span class="progress-container" data-astro-cid-arvmh47h>[<span class="progress-bar" data-astro-cid-arvmh47h></span>]</span> <span class="progress-text" data-astro-cid-arvmh47h>0%</span> </div> <div class="terminal-line" data-delay="9" data-astro-cid-arvmh47h> <span class="prompt" data-astro-cid-arvmh47h>❯</span> <span class="text text-success" data-astro-cid-arvmh47h>Access granted.</span><span class="cursor" data-astro-cid-arvmh47h>_</span> </div> <div class="terminal-line skip-hint" data-delay="10" data-astro-cid-arvmh47h> <span class="text-muted" data-astro-cid-arvmh47h>Press any key or click to continue...</span> </div> </div> </div>  <div id="main-content" class="main-content hidden">  <header data-astro-cid-3ef6ksr2> <nav class="container" data-astro-cid-3ef6ksr2> <a href="/" class="logo" data-astro-cid-3ef6ksr2> <img src="https://avatars.githubusercontent.com/u/266502139?s=200&v=4" alt="j3ssie" class="logo-img" data-astro-cid-3ef6ksr2> </a> <ul class="nav-links" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="#about" class="underline-link" data-astro-cid-3ef6ksr2>About</a></li> <li data-astro-cid-3ef6ksr2><a href="#projects" class="underline-link" data-astro-cid-3ef6ksr2>Projects</a></li> <li data-astro-cid-3ef6ksr2><a href="#contact" class="underline-link" data-astro-cid-3ef6ksr2>Contact</a></li> </ul> <button data-theme-toggle aria-label="Toggle theme" class="theme-toggle" data-astro-cid-x3pjskd3> <i data-lucide="sun" class="sun-icon" data-astro-cid-x3pjskd3></i> <i data-lucide="moon" class="moon-icon" data-astro-cid-x3pjskd3></i> </button>  </nav> </header>  <main> <div class="two-column-section"> <section id="about" class="hero-section" data-astro-cid-v2cbyr3p> <div class="container" data-astro-cid-v2cbyr3p> <div class="about-content fade-in" data-astro-cid-v2cbyr3p> <div class="about-header" data-astro-cid-v2cbyr3p> <a href="https://github.com/j3ssie" target="_blank" rel="noopener noreferrer" data-astro-cid-v2cbyr3p> <img src="https://avatars.githubusercontent.com/u/23289085" alt="j3ssie" class="avatar" data-astro-cid-v2cbyr3p> </a> <div class="about-intro" data-astro-cid-v2cbyr3p> <h2 data-astro-cid-v2cbyr3p><a href="#about" class="section-link" data-astro-cid-v2cbyr3p># About</a></h2> </div> </div> <div class="bio" data-astro-cid-v2cbyr3p> <p data-astro-cid-v2cbyr3p> <span class="arrow" data-astro-cid-v2cbyr3p>▶</span>Hi, my name is <span class="text-cyan" data-astro-cid-v2cbyr3p>Ai Ho</span> (a male name in my country) and on the Internet I'm known as <span class="text-cyan" data-astro-cid-v2cbyr3p>j3ssie</span> or <span class="text-cyan" data-astro-cid-v2cbyr3p>Jessie Ho</span>.
-</p> <p data-astro-cid-v2cbyr3p> <span class="arrow" data-astro-cid-v2cbyr3p>▶</span>I am currently employed as a <a href="https://www.linkedin.com/in/jessie-aiho/" target="_blank" rel="noopener noreferrer" class="text-cyan" data-astro-cid-v2cbyr3p>Senior Security Engineer</a> at <a href="https://www.linkedin.com/in/jessie-aiho/" target="_blank" rel="noopener noreferrer" class="text-cyan" data-astro-cid-v2cbyr3p>Bytedance (TikTok)</a> and am the creator of <a href="https://www.vigolium.com/" target="_blank" rel="noopener noreferrer" class="text-cyan" data-astro-cid-v2cbyr3p>Vigolium</a>, <a href="https://www.osmedeus.org/" target="_blank" rel="noopener noreferrer" class="text-cyan" data-astro-cid-v2cbyr3p>Osmedeus</a>, Metabigor, Jaeles.
-</p> <p data-astro-cid-v2cbyr3p> <span class="arrow" data-astro-cid-v2cbyr3p>▶</span>Recognized by Fortune 500 leaders including <a href="https://bughunters.google.com/profile/b1268a2e-01e3-47c6-808b-eb6ab5f8fd7f/awards" target="_blank" rel="noopener noreferrer" class="text-orange" data-astro-cid-v2cbyr3p>Google</a>, <a href="https://support.apple.com/en-us/102812" target="_blank" rel="noopener noreferrer" class="text-orange" data-astro-cid-v2cbyr3p>Apple</a>, <span data-astro-cid-v2cbyr3p>Microsoft</span>, <a href="https://bugcrowd.com/h/j3ssie" target="_blank" rel="noopener noreferrer" class="text-orange" data-astro-cid-v2cbyr3p>Netflix</a>, <a href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer" class="text-orange" data-astro-cid-v2cbyr3p>Yahoo</a>, <a href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer" class="text-orange" data-astro-cid-v2cbyr3p>StackOverflow</a>, <a href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer" class="text-orange" data-astro-cid-v2cbyr3p>Alibaba</a>, <a href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer" class="text-orange" data-astro-cid-v2cbyr3p>Grab</a>, <a href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer" class="text-orange" data-astro-cid-v2cbyr3p>Snapchat</a>, <a href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer" class="text-orange" data-astro-cid-v2cbyr3p>Starbucks</a>, <span data-astro-cid-v2cbyr3p>Tencent</span>, <span data-astro-cid-v2cbyr3p>Firefox</span>, <span data-astro-cid-v2cbyr3p>Django</span>, <span data-astro-cid-v2cbyr3p>Red Hat</span>, <a href="https://bugcrowd.com/h/j3ssie" target="_blank" rel="noopener noreferrer" class="text-orange" data-astro-cid-v2cbyr3p>FireEye</a>, <a href="https://bugcrowd.com/h/j3ssie" target="_blank" rel="noopener noreferrer" class="text-orange" data-astro-cid-v2cbyr3p>SAP</a>, <a href="https://bugcrowd.com/h/j3ssie" target="_blank" rel="noopener noreferrer" class="text-orange" data-astro-cid-v2cbyr3p>ATT</a>, <a href="https://bugcrowd.com/h/j3ssie" target="_blank" rel="noopener noreferrer" class="text-orange" data-astro-cid-v2cbyr3p>Mastercard</a>, <a href="https://x.com/DC3VDP/status/1170040288494141442?s=20" target="_blank" rel="noopener noreferrer" class="text-orange" data-astro-cid-v2cbyr3p>US Department of Defense</a>, and so many more for identifying and reporting critical security vulnerabilities in their products.
-</p> <p data-astro-cid-v2cbyr3p> <span class="arrow" data-astro-cid-v2cbyr3p>▶</span>Passionate about security automation and building innovative solutions for security challenges.
-</p> </div> </div> </div> </section>  <section id="projects" data-astro-cid-amng4zvp> <div class="container" data-astro-cid-amng4zvp> <div class="section-header fade-in" data-astro-cid-amng4zvp> <h2 data-astro-cid-amng4zvp><a href="#projects" class="section-link" data-astro-cid-amng4zvp># Projects</a></h2> </div> <div class="proj-list"> <a href="https://gimorra.vigolium.com/" class="proj fade-in" target="_blank" rel="noopener noreferrer"> <div class="proj-head"><span class="proj-name">Gimorra</span><span class="proj-go">↗</span></div> <p class="proj-desc"><span class="proj-tree">└ </span>An autonomous offensive security agent.</p> <div class="proj-badges"><span class="proj-badge">offensive-security</span><span class="proj-badge">ai-agent</span><span class="proj-badge">autonomous</span></div> </a> <a href="http://www.vigolium.com/" class="proj fade-in" target="_blank" rel="noopener noreferrer"> <div class="proj-head"><span class="proj-name">Vigolium</span><span class="proj-stars">★ 1.1k+</span><span class="proj-go">↗</span></div> <p class="proj-desc"><span class="proj-tree">└ </span>High-fidelity vulnerability scanner with native scan precision and agentic scan intelligence.</p> <div class="proj-badges"><span class="proj-badge">vulnerability-scanner</span><span class="proj-badge">ai</span><span class="proj-badge">security</span></div> </a> <a href="https://www.osmedeus.org/" class="proj fade-in" target="_blank" rel="noopener noreferrer"> <div class="proj-head"><span class="proj-name">Osmedeus</span><span class="proj-stars">★ 6k+</span><span class="proj-go">↗</span></div> <p class="proj-desc"><span class="proj-tree">└ </span>A Modern Orchestration Engine for Security.</p> <div class="proj-badges"><span class="proj-badge">automation</span><span class="proj-badge">orchestration</span><span class="proj-badge">ai</span><span class="proj-badge">attack-surface-management</span></div> </a> <div class="proj-row"> <a href="https://github.com/jaeles-project/jaeles" class="proj fade-in" target="_blank" rel="noopener noreferrer"> <div class="proj-head"><span class="proj-name">Jaeles</span><span class="proj-stars">★ 2.3k+</span><span class="proj-go">↗</span></div> <p class="proj-desc"><span class="proj-tree">└ </span>The Swiss Army knife for automated Web Application Testing.</p> </a> <a href="https://github.com/j3ssie/metabigor" class="proj fade-in" target="_blank" rel="noopener noreferrer"> <div class="proj-head"><span class="proj-name">Metabigor</span><span class="proj-stars">★ 1.5k+</span><span class="proj-go">↗</span></div> <p class="proj-desc"><span class="proj-tree">└ </span>Intelligence tool but without API key.</p> </a> </div> </div> </div> </div> </section>  </div> <section id="contact" data-astro-cid-xmivup5a> <div class="container" data-astro-cid-xmivup5a> <div class="contact-content" data-astro-cid-xmivup5a> <div class="contact-section fade-in" data-astro-cid-xmivup5a> <h2 data-astro-cid-xmivup5a><a href="#contact" class="section-link" data-astro-cid-xmivup5a># Contact me</a></h2> <p class="collab-text" data-astro-cid-xmivup5a>Interested in collaboration? I'm open to working on security research, offensive automation tools, and attack surface management projects. Feel free to contact me using any of the methods below if you'd like to share ideas or discuss opportunities.</p> <div class="links-row" data-astro-cid-xmivup5a> <a href="https://x.com/j3ssie" target="_blank" rel="noopener noreferrer" class="social-link text-blue" data-astro-cid-xmivup5a> <i data-lucide="twitter" data-astro-cid-xmivup5a></i> Twitter </a><a href="https://www.linkedin.com/in/jessie-aiho/" target="_blank" rel="noopener noreferrer" class="social-link text-blue" data-astro-cid-xmivup5a> <i data-lucide="linkedin" data-astro-cid-xmivup5a></i> LinkedIn </a><a href="https://github.com/j3ssie" target="_blank" rel="noopener noreferrer" class="social-link text-blue" data-astro-cid-xmivup5a> <i data-lucide="github" data-astro-cid-xmivup5a></i> Github </a> </div> <div class="links-row" data-astro-cid-xmivup5a> <a href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer" class="social-link text-blue" data-astro-cid-xmivup5a> <i data-lucide="external-link" data-astro-cid-xmivup5a></i> Hackerone </a><a href="https://bugcrowd.com/h/j3ssie" target="_blank" rel="noopener noreferrer" class="social-link text-blue" data-astro-cid-xmivup5a> <i data-lucide="external-link" data-astro-cid-xmivup5a></i> BugCrowd </a><a href="mailto:jessie.ho@proton.me" target="_blank" rel="noopener noreferrer" class="social-link text-blue" data-astro-cid-xmivup5a> <i data-lucide="mail" data-astro-cid-xmivup5a></i> jessie.ho@proton.me </a> </div> </div> <div class="contact-section fade-in" data-astro-cid-xmivup5a> <h2 data-astro-cid-xmivup5a><a href="#contact" class="section-link" data-astro-cid-xmivup5a># Supporting my work</a></h2> <p class="support-text" data-astro-cid-xmivup5a>If you love my tools and want to support my work, please see the donation options below.</p> <div class="links-row" data-astro-cid-xmivup5a> <a href="https://www.patreon.com/j3ssie" target="_blank" rel="noopener noreferrer" class="social-link text-red" data-astro-cid-xmivup5a> <i data-lucide="heart" data-astro-cid-xmivup5a></i> Patreon </a><a href="https://www.paypal.com/paypalme/j3ssiejjj" target="_blank" rel="noopener noreferrer" class="social-link text-red" data-astro-cid-xmivup5a> <i data-lucide="heart" data-astro-cid-xmivup5a></i> Paypal </a><a href="https://docs.osmedeus.org/sponsor" target="_blank" rel="noopener noreferrer" class="social-link text-red" data-astro-cid-xmivup5a> <i data-lucide="heart" data-astro-cid-xmivup5a></i> Other Methods </a> </div> </div> <div class="caret" data-astro-cid-xmivup5a></div> </div> </div> </section>  </main> <footer data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <p class="copyright" data-astro-cid-sz7xmlte> <button id="replay-animation" class="footer-link" title="Restart the animation" data-astro-cid-sz7xmlte>
-&copy; 2026 - j3ssie
-</button> </p> </div> </div> </footer> <script type="module">document.getElementById("replay-animation")?.addEventListener("click",function(n){n.preventDefault(),typeof window.replayTerminalAnimation=="function"&&window.replayTerminalAnimation()});</script>   </div> <!-- Terminal Reveal Animation Controller --> <script>
-      (function() {
-        var overlay = document.getElementById('terminal-overlay');
-        var mainContent = document.getElementById('main-content');
-        var progressText = overlay.querySelector('.progress-text');
-        var progressBar = overlay.querySelector('.progress-bar');
-        var animationComplete = false;
-        var timeouts = [];
-        var intervals = [];
-        var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jessie Ho aka j3ssie</title>
+<meta name="description" content="Senior Security Engineer and creator of Gimorra, Vigolium, Osmedeus, Metabigor, and Jaeles.">
+<meta property="og:title" content="Jessie Ho aka j3ssie">
+<meta property="og:description" content="Senior Security Engineer and creator of Gimorra, Vigolium, Osmedeus, Metabigor, and Jaeles.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://j3ssie.github.io">
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/23289085?s=460&u=d61e560a054ac1c7df8ad51fcbaa7d8dfd131fcc&v=4">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@j3ssiejjj">
+<meta name="twitter:creator" content="@j3ssiejjj">
+<meta name="twitter:title" content="Jessie Ho aka j3ssie">
+<meta name="twitter:description" content="Senior Security Engineer and creator of Gimorra, Vigolium, Osmedeus, Metabigor, and Jaeles.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#18181a" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script>
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js');
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<style>
+  :root {
+    /* light theme (Ghostty) */
+    --paper: #ffffff;
+    --surface: #f5f5f5;
+    --ink: #33393f;
+    --soft: #37393dcc;
+    --muted: #7a7e82;
+    --faint: #d9dade;
+    --rule: #37393d1f;
+    --wash: #37393d0d;
+    --edge-top: #37393d0a;
+    --edge-bottom: #37393d24;
+    --accent: #50fa7b;
+    --accent-text: #1a9f4a;
+    --on-accent: #18181a;
+    --selection: #dbe4f5;
+    --selection-fg: #37393d;
+    --dot: #e8e9eb;
+    --star: #ac8537;
+    --c-red: #b9574c;
+    --c-green: #5b915b;
+    --c-yellow: #ac8537;
+    --c-blue: #4d7ac1;
+    --c-magenta: #8461aa;
+    --c-cyan: #4b8c9f;
+    --shadow-icon: 0 0 0 .5px #33393f12, 0 1px 1px -.5px #33393f0f, 0 2px 2px -1px #33393f0f, 0 4px 4px -2px #33393f0f, 0 8px 8px -4px #33393f0a, 0 12px 12px -6px #33393f08;
+    --shadow-lift: 0 0 0 .5px #33393f24, 0 6px 16px #33393f0f, 0 2px 6px #33393f12;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+    --measure: clamp(38rem, calc(38rem + (100vw - 90rem) * .2667), 46rem);
+    --icon: 3rem;
+    --radius: .75rem;
+    --ease: cubic-bezier(.16, 1, .3, 1);
+    color-scheme: light;
+  }
+  /* dark theme (Ghostty) */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #18181a;
+      --surface: #222123;
+      --ink: #e8e4df;
+      --soft: #d8d4cfcc;
+      --muted: #9a9aa2;
+      --faint: #3d3530;
+      --rule: #d8d4cf24;
+      --wash: #d8d4cf12;
+      --edge-top: #d8d4cf33;
+      --edge-bottom: #d8d4cf12;
+      --accent: #50fa7b;
+      --accent-text: #50fa7b;
+      --on-accent: #18181a;
+      --selection: #3d3530;
+      --selection-fg: #e8e4df;
+      --dot: #29282a;
+      --star: #e6b86e;
+      --c-red: #e06c60;
+      --c-green: #8ab87a;
+      --c-yellow: #d4a656;
+      --c-blue: #6ca0c8;
+      --c-magenta: #c586b6;
+      --c-cyan: #6eb5b5;
+      --shadow-icon: 0 0 0 .5px #d8d4cf1a, 0 1px 1px -.5px #0003, 0 2px 2px -1px #0003, 0 4px 4px -2px #0003, 0 8px 8px -4px #00000029, 0 12px 12px -6px #0000001f;
+      --shadow-lift: 0 0 0 .5px #d8d4cf33, 0 6px 16px #0000004d, 0 2px 6px #00000059;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #18181a;
+    --surface: #222123;
+    --ink: #e8e4df;
+    --soft: #d8d4cfcc;
+    --muted: #9a9aa2;
+    --faint: #3d3530;
+    --rule: #d8d4cf24;
+    --wash: #d8d4cf12;
+    --edge-top: #d8d4cf33;
+    --edge-bottom: #d8d4cf12;
+    --accent: #50fa7b;
+    --accent-text: #50fa7b;
+    --on-accent: #18181a;
+    --selection: #3d3530;
+    --selection-fg: #e8e4df;
+    --dot: #29282a;
+    --star: #e6b86e;
+    --c-red: #e06c60;
+    --c-green: #8ab87a;
+    --c-yellow: #d4a656;
+    --c-blue: #6ca0c8;
+    --c-magenta: #c586b6;
+    --c-cyan: #6eb5b5;
+    --shadow-icon: 0 0 0 .5px #d8d4cf1a, 0 1px 1px -.5px #0003, 0 2px 2px -1px #0003, 0 4px 4px -2px #0003, 0 8px 8px -4px #00000029, 0 12px 12px -6px #0000001f;
+    --shadow-lift: 0 0 0 .5px #d8d4cf33, 0 6px 16px #0000004d, 0 2px 6px #00000059;
+    color-scheme: dark;
+  }
 
-        // Fast timeline (initial load)
-        var fastTimeline = [
-          { delay: 0, selector: '[data-delay="0"]', startBruteforce: true },
-          { delay: 40, selector: '[data-delay="1"]' },
-          { delay: 80, selector: '[data-delay="2"]' },
-          { delay: 120, selector: '[data-delay="3"]' },
-          { delay: 180, selector: '[data-delay="4"]' },
-          { delay: 250, selector: '[data-delay="5"]' },
-          { delay: 290, selector: '[data-delay="6"]' },
-          { delay: 330, selector: '[data-delay="7"]', isProgress: true, duration: 150 },
-          { delay: 500, selector: '[data-delay="8"]' },
-          { delay: 550, selector: '[data-delay="9"]' },
-          { delay: 600, selector: '[data-delay="10"]' },
-          { delay: 1000, action: 'auto-dismiss' }
-        ];
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: .9375rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color .2s ease, color .2s ease;
+  }
+  ::selection { background: var(--selection); color: var(--selection-fg); }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; border-radius: 4px; }
 
-        // Normal timeline (replay from footer)
-        var normalTimeline = [
-          { delay: 0, selector: '[data-delay="0"]', startBruteforce: true },
-          { delay: 300, selector: '[data-delay="1"]' },
-          { delay: 600, selector: '[data-delay="2"]' },
-          { delay: 900, selector: '[data-delay="3"]' },
-          { delay: 1200, selector: '[data-delay="4"]' },
-          { delay: 1700, selector: '[data-delay="5"]' },
-          { delay: 2000, selector: '[data-delay="6"]' },
-          { delay: 2300, selector: '[data-delay="7"]', isProgress: true, duration: 800 },
-          { delay: 3200, selector: '[data-delay="8"]' },
-          { delay: 3500, selector: '[data-delay="9"]' },
-          { delay: 3800, selector: '[data-delay="10"]' },
-          { delay: 5500, action: 'auto-dismiss' }
-        ];
+  /* ---------- layout (Rex docs) ---------- */
+  .shell {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  .sidebar { display: none; }
+  .topbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .topbar nav { display: flex; gap: 1rem; margin-left: auto; font-size: .875rem; letter-spacing: -.01em; }
+  .topbar nav a { color: var(--soft); transition: color .1s; }
+  .topbar nav a:hover { color: var(--ink); }
 
-        function showElement(selector) {
-          var el = overlay.querySelector(selector);
-          if (el) {
-            el.classList.add('visible');
-          }
-        }
+  @media (min-width: 60rem) {
+    .shell {
+      margin-left: max(15rem, calc(50vw - 18rem));
+      margin-right: auto;
+      padding: 5rem 2rem 6rem 0;
+    }
+    .topbar { display: none; }
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: clamp(.5rem, calc(50vw - 33rem), 4rem);
+      width: 12.5rem;
+      max-height: 100vh;
+      overflow-y: auto;
+      scrollbar-width: none;
+      padding: 5rem .5rem 3rem 1rem;
+    }
+  }
 
-        function randomString(len) {
-          var result = '';
-          for (var i = 0; i < len; i++) {
-            result += chars.charAt(Math.floor(Math.random() * chars.length));
-          }
-          return result;
-        }
+  .icon {
+    display: block;
+    width: var(--icon);
+    height: var(--icon);
+    border-radius: 22.5%;
+    box-shadow: var(--shadow-icon);
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: transform .3s var(--ease), box-shadow .3s ease;
+  }
+  .icon:hover {
+    transform: rotate(-4deg) scale(1.04);
+    box-shadow: 0 0 0 1.5px var(--accent), 0 0 14px color-mix(in srgb, var(--accent) 70%, transparent), 0 0 32px color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+  @media (hover: none) {
+    .icon { animation: glow 3.2s ease-in-out infinite; }
+  }
+  @keyframes glow {
+    0%, 100% { box-shadow: var(--shadow-icon); }
+    50% { box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 60%, transparent), 0 0 14px color-mix(in srgb, var(--accent) 55%, transparent); }
+  }
+  .icon img { width: 100%; height: 100%; object-fit: cover; }
+  .topbar .icon { --icon: 2.25rem; }
 
-        function animateBruteforce(elementId) {
-          var el = document.getElementById(elementId);
-          if (!el) return;
-          var interval = setInterval(function() {
-            el.textContent = randomString(8);
-          }, 30);
-          intervals.push(interval);
-        }
+  .nav { display: flex; flex-direction: column; gap: 1.75rem; padding-top: 1.75rem; font-size: .875rem; letter-spacing: -.01em; line-height: 1.2; }
+  .nav h2 { font-size: inherit; font-weight: 400; color: var(--muted); padding-bottom: .75rem; }
+  .nav ul { list-style: none; }
+  .nav a {
+    position: relative;
+    display: block;
+    padding: .25rem 0;
+    color: var(--soft);
+    transition: color .1s, transform .3s var(--ease);
+  }
+  .nav a:hover { color: var(--ink); }
+  .nav a[aria-current="true"] { color: var(--ink); }
+  .nav a::before {
+    content: "";
+    position: absolute;
+    left: -.75rem;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    margin-top: -2px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .2s, transform .35s var(--ease);
+  }
+  .nav a[aria-current="true"]::before { opacity: 1; transform: scale(1); }
+  .nav .ext::after { content: " ↗"; color: var(--muted); font-size: .8em; }
 
-        function startAllBruteforce() {
-          animateBruteforce('brute1');
-          animateBruteforce('brute2');
-        }
+  .theme-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .875rem;
+    letter-spacing: -.01em;
+    color: var(--soft);
+    border-radius: 999px;
+    padding: .375rem .625rem;
+    margin-left: -.625rem;
+    transition: color .1s, background-color .1s;
+  }
+  .theme-btn:hover { color: var(--ink); background: var(--wash); }
+  .theme-btn svg { width: 14px; height: 14px; transition: transform .5s var(--ease); }
+  .theme-btn:hover svg { transform: rotate(40deg); }
+  .sidebar .theme-btn { margin-top: 2rem; align-self: flex-start; }
+  .topbar .theme-btn { margin-left: 0; padding: .375rem; }
+  .topbar .theme-btn span { display: none; }
+  .sun { display: none; }
+  :root[data-theme="dark"] .sun { display: block; }
+  :root[data-theme="dark"] .moon { display: none; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .sun { display: block; }
+    :root:not([data-theme="light"]) .moon { display: none; }
+  }
 
-        function resetOverlay() {
-          // Clear all intervals
-          intervals.forEach(function(i) { clearInterval(i); });
-          intervals = [];
-          // Reset all elements
-          overlay.querySelectorAll('.terminal-line, .welcome-text').forEach(function(el) {
-            el.classList.remove('visible');
-          });
-          // Reset bruteforce elements
-          document.querySelectorAll('.bruteforce').forEach(function(el) {
-            el.textContent = '████████';
-            el.style.color = 'var(--purple)';
-          });
-          if (progressText) progressText.textContent = '0%';
-          if (progressBar) progressBar.style.width = '0';
-          overlay.classList.remove('fade-out', 'hidden');
-          animationComplete = false;
-        }
+  /* ---------- article ---------- */
+  .article { color: var(--soft); text-wrap: pretty; }
+  .article h1 {
+    color: var(--ink);
+    font-weight: 400;
+    font-size: 1.75rem;
+    line-height: 1.15;
+    letter-spacing: -.02em;
+  }
+  @media (min-width: 60rem) {
+    .article h1 { min-height: var(--icon); display: flex; align-items: center; }
+  }
 
-        function animateProgress(duration) {
-          var start = Date.now();
-          var interval = setInterval(function() {
-            var elapsed = Date.now() - start;
-            var progress = Math.min(100, Math.round((elapsed / duration) * 100));
-            if (progressText) {
-              progressText.textContent = progress + '%';
-            }
-            if (progressBar) {
-              progressBar.style.width = (progress * 2) + 'px';
-            }
-            if (progress >= 100) {
-              clearInterval(interval);
-            }
-          }, 20);
-          intervals.push(interval);
-        }
+  .article h2 {
+    position: relative;
+    color: var(--ink);
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.3;
+    letter-spacing: -.015em;
+    padding-top: 2.5rem;
+    scroll-margin-top: 2rem;
+  }
+  .article h2 a { display: inline-flex; align-items: center; gap: .375rem; }
+  .article h2 .hash { color: var(--faint); font-size: .875rem; opacity: 0; transition: opacity .1s, color .1s; }
+  .article h2:hover .hash { opacity: 1; }
+  .article h2 .hash:hover { color: var(--ink); }
+  /* Rex heading shine */
+  .article h2[data-text]::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: var(--accent-text);
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(105deg, transparent 20%, #000 50%, transparent 80%);
+            mask-image: linear-gradient(105deg, transparent 20%, #000 50%, transparent 80%);
+    -webkit-mask-size: 160px 100%; mask-size: 160px 100%;
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    -webkit-mask-position: -160px 0; mask-position: -160px 0;
+  }
+  .article h2.in[data-text]::after { animation: shine 1.4s var(--ease) .15s both; }
+  @keyframes shine {
+    from { -webkit-mask-position: -160px 0; mask-position: -160px 0; }
+    to { -webkit-mask-position: calc(100% + 160px) 0; mask-position: calc(100% + 160px) 0; }
+  }
 
-        function dismissOverlay() {
-          if (animationComplete) return;
-          animationComplete = true;
+  .article p { margin-top: 1rem; }
+  .article strong, .article .name { font-weight: inherit; color: var(--ink); }
+  .article p a, .article .inline-link {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--faint);
+    text-underline-offset: .2em;
+    transition: text-decoration-color .1s;
+  }
+  .article p a, .article .inline-link {
+    --hl: var(--accent);
+    border-radius: 3px;
+    transition: color .15s ease, text-decoration-color .15s ease, background-color .15s ease, box-shadow .15s ease;
+  }
+  .article p a:nth-of-type(6n+1) { --hl: var(--c-blue); }
+  .article p a:nth-of-type(6n+2) { --hl: var(--c-green); }
+  .article p a:nth-of-type(6n+3) { --hl: var(--c-magenta); }
+  .article p a:nth-of-type(6n+4) { --hl: var(--c-cyan); }
+  .article p a:nth-of-type(6n+5) { --hl: var(--c-yellow); }
+  .article p a:nth-of-type(6n+6) { --hl: var(--c-red); }
+  .article p a:hover, .article p a:focus-visible, .article .inline-link:hover {
+    color: color-mix(in srgb, var(--hl) 80%, var(--ink));
+    text-decoration-color: var(--hl);
+    background-color: color-mix(in srgb, var(--hl) 14%, transparent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--hl) 14%, transparent);
+  }
 
-          // Clear all pending timeouts and intervals
-          timeouts.forEach(function(t) { clearTimeout(t); });
-          timeouts = [];
-          intervals.forEach(function(i) { clearInterval(i); });
-          intervals = [];
+  /* opencode leaderboard dot pattern */
+  .dots {
+    height: 16px;
+    margin-top: 2.5rem;
+    background-color: var(--dot);
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H2V2H0V0Z' fill='black'/%3E%3C/svg%3E");
+            mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H2V2H0V0Z' fill='black'/%3E%3C/svg%3E");
+    -webkit-mask-size: 6px 6px; mask-size: 6px 6px;
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 1.2s var(--ease);
+  }
+  .js .dots { clip-path: inset(0 100% 0 0); }
+  .js .dots.in { clip-path: inset(0 0 0 0); }
 
-          // Fade out overlay
-          overlay.classList.add('fade-out');
+  /* ---------- projects ---------- */
+  .projects { display: grid; gap: .5rem; margin-top: 1.25rem; }
+  .projects-pair { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+  @media (max-width: 40rem) { .projects-pair { grid-template-columns: 1fr; } }
 
-          // Show main content
-          mainContent.classList.remove('hidden');
+  .card {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: calc(var(--radius) + .25rem);
+    background:
+      linear-gradient(var(--surface), var(--surface)) padding-box,
+      linear-gradient(to bottom, var(--edge-top), var(--edge-bottom)) border-box;
+    border: 1px solid transparent;
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
+  }
+  @media (hover: hover) {
+    .card:hover { transform: translateY(-1px); box-shadow: var(--shadow-lift); }
+  }
+  .card:focus-visible { box-shadow: var(--shadow-lift); }
+  .card-tile {
+    display: block;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 22.5%;
+    background: var(--paper);
+    box-shadow: var(--shadow-icon);
+    overflow: hidden;
+    flex-shrink: 0;
+    --glow: var(--accent);
+    transition: box-shadow .3s ease;
+  }
+  .card-tile img { width: 100%; height: 100%; object-fit: cover; }
+  .card-tile.pad { padding: .3rem; background: #ffffff; }
+  .card-tile.pad img { object-fit: contain; }
+  .card:hover .card-tile, .card:focus-visible .card-tile {
+    animation: logo-glow 1.8s ease-in-out infinite;
+  }
+  @keyframes logo-glow {
+    0%, 100% { box-shadow: 0 0 0 1px color-mix(in srgb, var(--glow) 45%, transparent), 0 0 10px color-mix(in srgb, var(--glow) 40%, transparent); }
+    50% { box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--glow) 75%, transparent), 0 0 22px color-mix(in srgb, var(--glow) 65%, transparent), 0 0 44px color-mix(in srgb, var(--glow) 25%, transparent); }
+  }
+  .card-body { min-width: 0; flex: 1; }
+  .card-head { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+  .card-name { color: var(--ink); }
+  .pill {
+    display: inline-block;
+    border-radius: 999px;
+    background: var(--wash);
+    padding: .1rem .55rem;
+    font-size: .8125rem;
+    color: var(--soft);
+    font-variant-numeric: tabular-nums;
+  }
+  .pill-star {
+    background: color-mix(in srgb, var(--star) 14%, transparent);
+    color: color-mix(in srgb, var(--star) 70%, var(--ink));
+  }
+  .pill-star .star { color: var(--star); }
+  .pill-prop {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    background: color-mix(in srgb, var(--c-magenta) 14%, transparent);
+    color: color-mix(in srgb, var(--c-magenta) 75%, var(--ink));
+  }
+  .pill-prop svg { width: 11px; height: 11px; color: var(--c-magenta); transition: transform .3s var(--ease); }
+  .card:hover .pill-prop svg { transform: scale(1.2) rotate(-8deg); }
+  .pill-new { background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--accent-text); }
+  .card-go {
+    margin-left: auto;
+    color: var(--muted);
+    transition: color .14s, transform .3s var(--ease);
+  }
+  .card:hover .card-go { color: var(--ink); transform: translate(2px, -2px); }
+  .card-desc { margin-top: .25rem; font-size: .875rem; color: var(--soft); letter-spacing: -.01em; }
+  .card-tags { margin-top: .5rem; font-family: var(--mono); font-size: .75rem; color: var(--muted); }
+  .watermark {
+    position: absolute;
+    right: -1.5rem;
+    bottom: -2rem;
+    z-index: -1;
+    width: 7.5rem;
+    height: 7.5rem;
+    object-fit: contain;
+    border-radius: 22.5%;
+    opacity: .07;
+    filter: grayscale(1);
+    -webkit-mask-image: radial-gradient(circle at center, #000 30%, transparent 68%);
+            mask-image: radial-gradient(circle at center, #000 30%, transparent 68%);
+    pointer-events: none;
+    transition: opacity .2s ease, filter .3s ease, transform .5s var(--ease);
+  }
+  .card:hover .watermark { opacity: .14; filter: grayscale(.2); transform: translateY(-4px); }
 
-          // Remove overlay after transition
-          setTimeout(function() {
-            overlay.classList.add('hidden');
-            // Trigger scroll animations for visible elements
-            window.dispatchEvent(new Event('terminalRevealComplete'));
-          }, 500);
-        }
+  /* ---------- contact ---------- */
+  .links { display: flex; flex-wrap: wrap; gap: .375rem; margin-top: 1rem; }
+  .chip {
+    --c: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .375rem .75rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--c) 38%, transparent);
+    background: color-mix(in srgb, var(--c) 9%, transparent);
+    color: color-mix(in srgb, var(--c) 72%, var(--ink));
+    font-size: .875rem;
+    letter-spacing: -.01em;
+    transition: background-color .14s, border-color .14s, transform .3s var(--ease), box-shadow .2s;
+  }
+  .chip svg { width: 14px; height: 14px; color: var(--c); transition: transform .3s var(--ease); }
+  .chip:hover {
+    background: color-mix(in srgb, var(--c) 18%, transparent);
+    border-color: color-mix(in srgb, var(--c) 65%, transparent);
+    transform: translateY(-1px);
+  }
+  .chip:hover svg { transform: scale(1.15); }
+  .chip-solid { --c: var(--accent); background: var(--c); border-color: transparent; color: var(--on-accent); }
+  .chip-solid svg { color: var(--on-accent); }
+  .chip-solid:hover { background: var(--c); border-color: transparent; box-shadow: 0 4px 14px color-mix(in srgb, var(--c) 40%, transparent); }
+  .c-red { --c: var(--c-red); }
+  .c-green { --c: var(--c-green); }
+  .c-yellow { --c: var(--c-yellow); }
+  .c-blue { --c: var(--c-blue); }
+  .c-magenta { --c: var(--c-magenta); }
+  .c-cyan { --c: var(--c-cyan); }
 
-        function runAnimation(timeline) {
-          resetOverlay();
-          mainContent.classList.add('hidden');
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1rem;
+    justify-content: space-between;
+    margin-top: 4rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-size: .8125rem;
+    color: var(--muted);
+  }
+  footer a { transition: color .1s; }
+  footer a:hover { color: var(--ink); }
+  footer code { font-family: var(--mono); font-size: .75rem; }
 
-          timeline.forEach(function(item) {
-            var t = setTimeout(function() {
-              if (animationComplete) return;
-              if (item.action === 'auto-dismiss') {
-                dismissOverlay();
-              } else {
-                showElement(item.selector);
-                if (item.startBruteforce) {
-                  startAllBruteforce();
-                }
-                if (item.isProgress) {
-                  animateProgress(item.duration || 1000);
-                }
-              }
-            }, item.delay);
-            timeouts.push(t);
-          });
-        }
+  /* ---------- reveal ---------- */
+  .js .rv {
+    opacity: 0;
+    transform: translateY(8px);
+    filter: blur(3px);
+    transition: opacity .8s var(--ease), transform .8s var(--ease), filter .8s var(--ease);
+    transition-delay: calc(var(--i, 0) * 60ms);
+  }
+  .js .rv.in { opacity: 1; transform: none; filter: none; }
 
-        // Initial fast animation
-        runAnimation(fastTimeline);
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .js .rv { opacity: 1; transform: none; filter: none; }
+    .js .dots { clip-path: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
 
-        // Skip on click or keypress
-        document.addEventListener('click', function(e) {
-          if (!animationComplete && overlay.contains(e.target)) {
-            dismissOverlay();
-          }
-        });
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></g></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2Z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+</svg>
 
-        document.addEventListener('keydown', function(e) {
-          if (!animationComplete) {
-            dismissOverlay();
-          }
-        });
+<aside class="sidebar" aria-label="Sidebar">
+  <a href="#about" class="icon rv" aria-label="j3ssie"><img src="https://avatars.githubusercontent.com/u/23289085" alt="" width="48" height="48"></a>
+  <nav class="nav" aria-label="Sections">
+    <div class="rv" style="--i:1">
+      <ul>
+        <li><a href="#about" data-nav="about">About</a></li>
+      </ul>
+    </div>
+    <div class="rv" style="--i:2">
+      <h2>Work</h2>
+      <ul>
+        <li><a href="#projects" data-nav="projects">Projects</a></li>
+        <li><a href="#contact" data-nav="contact">Contact</a></li>
+        <li><a href="#support" data-nav="support">Supporting my work</a></li>
+      </ul>
+    </div>
+    <div class="rv" style="--i:3">
+      <h2>Elsewhere</h2>
+      <ul>
+        <li><a class="ext" href="https://github.com/j3ssie" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a class="ext" href="https://x.com/j3ssie" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+        <li><a class="ext" href="https://www.linkedin.com/in/jessie-aiho/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a class="ext" href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer">HackerOne</a></li>
+        <li><a class="ext" href="https://bugcrowd.com/h/j3ssie" target="_blank" rel="noopener noreferrer">Bugcrowd</a></li>
+      </ul>
+    </div>
+  </nav>
+  <button type="button" class="theme-btn rv" style="--i:4" data-theme-toggle aria-label="Toggle color theme">
+    <svg class="moon" aria-hidden="true"><use href="#i-moon"/></svg>
+    <svg class="sun" aria-hidden="true"><use href="#i-sun"/></svg>
+    <span data-theme-label>Theme</span>
+  </button>
+</aside>
 
-        // Expose replay function for footer
-        window.replayTerminalAnimation = function() {
-          runAnimation(normalTimeline);
-        };
-      })();
-    </script> <!-- Scroll Animation Observer & Theme Toggle --> <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Initialize Lucide icons
-        if (typeof lucide !== 'undefined') {
-          lucide.createIcons();
-        }
+<div class="shell">
+  <header class="topbar">
+    <a href="#about" class="icon" aria-label="j3ssie"><img src="https://avatars.githubusercontent.com/u/23289085" alt="" width="36" height="36"></a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button type="button" class="theme-btn" data-theme-toggle aria-label="Toggle color theme">
+      <svg class="moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      <svg class="sun" aria-hidden="true"><use href="#i-sun"/></svg>
+      <span>Theme</span>
+    </button>
+  </header>
 
-        // Scroll fade-in animation
-        var observer = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-            }
-          });
-        }, { threshold: 0.1 });
+  <main class="article">
+    <section id="about" data-section>
+      <h1 class="rv">Jessie Ho <span style="color:var(--muted);margin-left:.4em">aka j3ssie</span></h1>
+      <p class="rv" style="--i:2">Hi, my name is <span class="name">Ai Ho</span> (a male name in my country) and on the Internet I'm known as <span class="name">j3ssie</span> or <span class="name">Jessie Ho</span>.</p>
+      <p class="rv" style="--i:3">I am currently employed as a <a href="https://www.linkedin.com/in/jessie-aiho/" target="_blank" rel="noopener noreferrer">Senior Security Engineer</a> at <a href="https://www.linkedin.com/in/jessie-aiho/" target="_blank" rel="noopener noreferrer">TikTok (Bytedance)</a> and am the creator of <a href="https://gimorra.vigolium.com/" target="_blank" rel="noopener noreferrer">Gimorra</a>, <a href="https://www.vigolium.com/" target="_blank" rel="noopener noreferrer">Vigolium</a>, <a href="https://www.osmedeus.org/" target="_blank" rel="noopener noreferrer">Osmedeus</a>, <a href="https://github.com/j3ssie/metabigor" target="_blank" rel="noopener noreferrer">Metabigor</a>, <a href="https://github.com/jaeles-project/jaeles" target="_blank" rel="noopener noreferrer">Jaeles</a>.</p>
+      <p class="rv" style="--i:4">Recognized by Fortune 500 leaders including <a href="https://bughunters.google.com/profile/b1268a2e-01e3-47c6-808b-eb6ab5f8fd7f/awards" target="_blank" rel="noopener noreferrer">Google</a>, <a href="https://support.apple.com/en-us/102812" target="_blank" rel="noopener noreferrer">Apple</a>, <span class="name">Microsoft</span>, <a href="https://bugcrowd.com/h/j3ssie" target="_blank" rel="noopener noreferrer">Netflix</a>, <a href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer">Yahoo</a>, <a href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer">StackOverflow</a>, <a href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer">Alibaba</a>, <a href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer">Grab</a>, <a href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer">Snapchat</a>, <a href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer">Starbucks</a>, <span class="name">Tencent</span>, <span class="name">Firefox</span>, <span class="name">Django</span>, <span class="name">Red Hat</span>, <a href="https://bugcrowd.com/h/j3ssie" target="_blank" rel="noopener noreferrer">FireEye</a>, <a href="https://bugcrowd.com/h/j3ssie" target="_blank" rel="noopener noreferrer">SAP</a>, <a href="https://bugcrowd.com/h/j3ssie" target="_blank" rel="noopener noreferrer">ATT</a>, <a href="https://bugcrowd.com/h/j3ssie" target="_blank" rel="noopener noreferrer">Mastercard</a>, <a href="https://x.com/DC3VDP/status/1170040288494141442?s=20" target="_blank" rel="noopener noreferrer">US Department of Defense</a>, and so many more for identifying and reporting critical security vulnerabilities in their products.</p>
+      <p class="rv" style="--i:5">Passionate about security automation and building innovative solutions for security challenges.</p>
+      <div class="dots" aria-hidden="true"></div>
+    </section>
 
-        function observeFadeElements() {
-          document.querySelectorAll('.fade-in').forEach(function(el) {
-            observer.observe(el);
-          });
-        }
+    <section id="projects" data-section>
+      <h2 class="rv" data-text="Projects"><a href="#projects">Projects<span class="hash" aria-hidden="true">#</span></a></h2>
+      <div class="projects">
+        <a href="https://gimorra.vigolium.com/" class="card rv" target="_blank" rel="noopener noreferrer">
+          <span class="card-tile" style="--glow:#5b9bd5" aria-hidden="true"><img src="/assets/logos/gimorra.png" alt="" width="44" height="44" loading="lazy"></span>
+          <div class="card-body">
+            <div class="card-head"><span class="card-name">Gimorra</span><span class="pill pill-new">New</span><span class="pill pill-prop"><svg aria-hidden="true"><use href="#i-bolt"/></svg>Proprietary</span><svg class="card-go" width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+            <p class="card-desc">An autonomous offensive security agent.</p>
+            <p class="card-tags">offensive-security · ai-agent · autonomous</p>
+          </div>
+          <img class="watermark" src="/assets/logos/gimorra.png" alt="" aria-hidden="true" loading="lazy">
+        </a>
+        <a href="https://www.vigolium.com/" class="card rv" style="--i:1" target="_blank" rel="noopener noreferrer">
+          <span class="card-tile" style="--glow:#7ee06a" aria-hidden="true"><img src="/assets/logos/vigolium.png" alt="" width="44" height="44" loading="lazy"></span>
+          <div class="card-body">
+            <div class="card-head"><span class="card-name">Vigolium</span><span class="pill pill-star"><span class="star" aria-hidden="true">★</span> <span data-count="1.1">1.1k+</span></span><svg class="card-go" width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+            <p class="card-desc">High-fidelity vulnerability scanner with native scan precision and agentic scan intelligence.</p>
+            <p class="card-tags">vulnerability-scanner · ai · security</p>
+          </div>
+          <img class="watermark" src="/assets/logos/vigolium.png" alt="" aria-hidden="true" loading="lazy">
+        </a>
+        <a href="https://www.osmedeus.org/" class="card rv" style="--i:2" target="_blank" rel="noopener noreferrer">
+          <span class="card-tile" style="--glow:#8f6bff" aria-hidden="true"><img src="/assets/logos/osmedeus.png" alt="" width="44" height="44" loading="lazy"></span>
+          <div class="card-body">
+            <div class="card-head"><span class="card-name">Osmedeus</span><span class="pill pill-star"><span class="star" aria-hidden="true">★</span> <span data-count="6.6">6.6k+</span></span><svg class="card-go" width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+            <p class="card-desc">A Modern Orchestration Engine for Security.</p>
+            <p class="card-tags">automation · orchestration · ai · attack-surface-management</p>
+          </div>
+          <img class="watermark" src="/assets/logos/osmedeus.png" alt="" aria-hidden="true" loading="lazy">
+        </a>
+        <div class="projects-pair">
+          <a href="https://github.com/jaeles-project/jaeles" class="card rv" style="--i:3" target="_blank" rel="noopener noreferrer">
+            <span class="card-tile pad" style="--glow:#4fb6e3" aria-hidden="true"><img src="/assets/logos/jaeles.png" alt="" width="44" height="44" loading="lazy"></span>
+            <div class="card-body">
+              <div class="card-head"><span class="card-name">Jaeles</span><span class="pill pill-star"><span class="star" aria-hidden="true">★</span> <span data-count="2.3">2.3k+</span></span><svg class="card-go" width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+              <p class="card-desc">The Swiss Army knife for automated Web Application Testing.</p>
+            </div>
+            <img class="watermark" src="/assets/logos/jaeles.png" alt="" aria-hidden="true" loading="lazy">
+          </a>
+          <a href="https://github.com/j3ssie/metabigor" class="card rv" style="--i:4" target="_blank" rel="noopener noreferrer">
+            <span class="card-tile pad" style="--glow:#4fb6e3" aria-hidden="true"><img src="/assets/logos/metabigor.png" alt="" width="44" height="44" loading="lazy"></span>
+            <div class="card-body">
+              <div class="card-head"><span class="card-name">Metabigor</span><span class="pill pill-star"><span class="star" aria-hidden="true">★</span> <span data-count="1.8">1.8k+</span></span><svg class="card-go" width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+              <p class="card-desc">Intelligence tool but without API key.</p>
+            </div>
+            <img class="watermark" src="/assets/logos/metabigor.png" alt="" aria-hidden="true" loading="lazy">
+          </a>
+        </div>
+      </div>
+      <div class="dots" aria-hidden="true"></div>
+    </section>
 
-        // Observe elements after terminal reveal completes
-        window.addEventListener('terminalRevealComplete', function() {
-          observeFadeElements();
-        });
+    <section id="contact" data-section>
+      <h2 class="rv" data-text="Contact me"><a href="#contact">Contact me<span class="hash" aria-hidden="true">#</span></a></h2>
+      <p class="rv" style="--i:1">Interested in collaboration? I'm open to working on security research, offensive automation tools, and attack surface management projects. Feel free to contact me using any of the methods below if you'd like to share ideas or discuss opportunities.</p>
+      <div class="links rv" style="--i:2">
+        <a class="chip chip-solid" href="mailto:jessie.ho@proton.me"><svg aria-hidden="true"><use href="#i-mail"/></svg>jessie.ho@proton.me</a>
+        <a class="chip c-cyan" href="https://x.com/j3ssie" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-x"/></svg>Twitter</a>
+        <a class="chip c-blue" href="https://www.linkedin.com/in/jessie-aiho/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+        <a class="chip c-green" href="https://github.com/j3ssie" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+        <a class="chip c-red" href="https://hackerone.com/j3ssie" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-arrow"/></svg>HackerOne</a>
+        <a class="chip c-magenta" href="https://bugcrowd.com/h/j3ssie" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-arrow"/></svg>Bugcrowd</a>
+      </div>
+    </section>
 
-        // Theme toggle functionality
-        document.addEventListener('click', function(e) {
-          if (e.target.closest('[data-theme-toggle]')) {
-            var current = document.documentElement.getAttribute('data-theme');
-            var newTheme = current === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            // Re-initialize icons after theme change
-            if (typeof lucide !== 'undefined') {
-              setTimeout(function() { lucide.createIcons(); }, 10);
-            }
-          }
-        });
+    <section id="support" data-section>
+      <h2 class="rv" data-text="Supporting my work"><a href="#support">Supporting my work<span class="hash" aria-hidden="true">#</span></a></h2>
+      <p class="rv" style="--i:1">If you love my tools and want to support my work, please see the donation options below.</p>
+      <div class="links rv" style="--i:2">
+        <a class="chip c-red" href="https://www.patreon.com/j3ssie" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-heart"/></svg>Patreon</a>
+        <a class="chip c-blue" href="https://www.paypal.com/paypalme/j3ssiejjj" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-heart"/></svg>PayPal</a>
+        <a class="chip c-yellow" href="https://docs.osmedeus.org/sponsor" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-heart"/></svg>Other methods</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>&copy; 2026 j3ssie</span>
+    <a href="/llms.txt"><code>/llms.txt</code></a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var darkMq = window.matchMedia('(prefers-color-scheme: dark)');
+
+  /* theme */
+  function effective() {
+    var t = root.getAttribute('data-theme');
+    return t || (darkMq.matches ? 'dark' : 'light');
+  }
+  function label() {
+    var next = effective() === 'dark' ? 'Light mode' : 'Dark mode';
+    document.querySelectorAll('[data-theme-label]').forEach(function (el) { el.textContent = next; });
+  }
+  document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var next = effective() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      label();
+    });
+  });
+  darkMq.addEventListener && darkMq.addEventListener('change', label);
+  label();
+
+  /* star count-up */
+  function countUp(el) {
+    var target = parseFloat(el.getAttribute('data-count'));
+    var dec = String(target).indexOf('.') > -1 ? 1 : 0;
+    if (reduce) return;
+    var start = performance.now(), dur = 1100;
+    function frame(now) {
+      var p = Math.min(1, (now - start) / dur);
+      var e = 1 - Math.pow(2, -10 * p);
+      el.textContent = (target * (p === 1 ? 1 : e)).toFixed(dec) + 'k+';
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    el.textContent = (0).toFixed(dec) + 'k+';
+    requestAnimationFrame(frame);
+  }
+
+  /* reveal on scroll */
+  var items = document.querySelectorAll('.rv, .dots');
+  if (!('IntersectionObserver' in window) || reduce) {
+    items.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('in');
+        en.target.querySelectorAll('[data-count]').forEach(countUp);
+        io.unobserve(en.target);
       });
-    </script> </body> </html> 
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  }
+
+  /* active section in sidebar */
+  var navLinks = document.querySelectorAll('[data-nav]');
+  var sections = document.querySelectorAll('[data-section]');
+  var ticking = false;
+  function syncNav() {
+    ticking = false;
+    var current = sections[0].id;
+    var line = window.innerHeight * 0.35;
+    var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    if (atBottom) current = sections[sections.length - 1].id;
+    else if (window.scrollY > 8) sections.forEach(function (s) { if (s.getBoundingClientRect().top <= line) current = s.id; });
+    navLinks.forEach(function (a) { a.setAttribute('aria-current', a.getAttribute('data-nav') === current ? 'true' : 'false'); });
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(syncNav); } }, { passive: true });
+  syncNav();
+
+})();
+</script>
+</body>
+</html>

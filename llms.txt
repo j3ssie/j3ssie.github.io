@@ -1,0 +1,31 @@
+# Jessie Ho (j3ssie)
+
+> Ai Ho, known online as j3ssie or Jessie Ho, is a Senior Security Engineer at TikTok (ByteDance) and the creator of Gimorra, Vigolium, Osmedeus, Metabigor, and Jaeles. Focus areas: security automation, offensive tooling, and attack surface management.
+
+Recognized by Google, Apple, Microsoft, Netflix, Yahoo, StackOverflow, Alibaba, Grab, Snapchat, Starbucks, Tencent, Firefox, Django, Red Hat, FireEye, SAP, AT&T, Mastercard, the US Department of Defense, and many others for finding and reporting critical security vulnerabilities in their products.
+
+Open to collaboration on security research, offensive automation tools, and attack surface management projects.
+
+## Projects
+
+- [Gimorra](https://gimorra.vigolium.com/): An autonomous offensive security agent.
+- [Vigolium](https://www.vigolium.com/): High-fidelity vulnerability scanner with native scan precision and agentic scan intelligence. 1.1k+ GitHub stars.
+- [Osmedeus](https://www.osmedeus.org/): A modern orchestration engine for security. 6.6k+ GitHub stars.
+- [Jaeles](https://github.com/jaeles-project/jaeles): The Swiss Army knife for automated web application testing. 2.3k+ GitHub stars.
+- [Metabigor](https://github.com/j3ssie/metabigor): Intelligence tool that works without API keys. 1.8k+ GitHub stars.
+
+## Contact
+
+- [Email](mailto:jessie.ho@proton.me): jessie.ho@proton.me
+- [GitHub](https://github.com/j3ssie)
+- [Twitter / X](https://x.com/j3ssie)
+- [LinkedIn](https://www.linkedin.com/in/jessie-aiho/)
+- [HackerOne](https://hackerone.com/j3ssie)
+- [Bugcrowd](https://bugcrowd.com/h/j3ssie)
+
+## Optional
+
+- [Homepage](https://j3ssie.github.io/): Portfolio page this file describes.
+- [Patreon](https://www.patreon.com/j3ssie): Support Jessie's open-source work.
+- [PayPal](https://www.paypal.com/paypalme/j3ssiejjj): One-off donations.
+- [Other sponsorship options](https://docs.osmedeus.org/sponsor)
