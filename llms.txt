@@ -12,7 +12,7 @@ Open to collaboration on security research, offensive automation tools, and atta
 - [Vigolium](https://www.vigolium.com/): High-fidelity vulnerability scanner with native scan precision and agentic scan intelligence. 1.1k+ GitHub stars.
 - [Osmedeus](https://www.osmedeus.org/): A modern orchestration engine for security. 6.6k+ GitHub stars.
 - [Jaeles](https://github.com/jaeles-project/jaeles): The Swiss Army knife for automated web application testing. 2.3k+ GitHub stars.
-- [Metabigor](https://github.com/j3ssie/metabigor): Intelligence tool that works without API keys. 1.8k+ GitHub stars.
+- [Metabigor](https://github.com/j3ssie/metabigor): OSINT power without API key hassle. 1.8k+ GitHub stars.
 
 ## Contact
 
